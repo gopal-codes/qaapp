@@ -51,7 +51,7 @@ const Nav = () => {
   }
 
   return (
-   
+
       <div className="sticky top-0 bg-white z-50">
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed]  flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
@@ -59,13 +59,6 @@ const Nav = () => {
           </Link>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
           
-            {parseCredObj?._id ? (
-              <div className="flex items-center gap-4">
-                {/* <Link className="hover:text-[#2591b2]" href="/profile">
-                  Profile
-                </Link> */}
-              </div>
-            ) : null}
             {!parseCredObj?._id ? (
               <Link className="hover:text-[#2591b2]" href="/login">
                 <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
@@ -94,19 +87,7 @@ const Nav = () => {
           {/* =========mobile-navigation======== */}
           {nav && (
             <div className="bg-white flex flex-col gap-[24px] shadow-lg z-10 absolute w-max   h-screen top-[70px] right-0 ">
-              {/* {parseCredObj?._id ? (
-                <div className="flex flex-col gap-[24px]">
-                  <Link
-                    onClick={handleNavclose}
-                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
-                    href="/profile"
-                  >
-                    <CgProfile className="text-[#2591b2]" />
-                    profile
-                  </Link>
-                  
-                </div>
-              ) : null} */}
+              
               {!parseCredObj?._id ? (
                 <Link
                   onClick={handleNavclose}
