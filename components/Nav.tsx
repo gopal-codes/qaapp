@@ -45,12 +45,13 @@ const Nav = () => {
   const router = useRouter();
   // handling logout
   const handleLogout = ()=>{
-    localStorage.removeItem("loginKey");
+    if (typeof window !== 'undefined') {
+    localStorage.removeItem("loginKey");}
     router.push("/login")
   }
 
   return (
-    <>
+   
       <div className="sticky top-0 bg-white z-50">
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed]  flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
@@ -93,45 +94,44 @@ const Nav = () => {
           {/* =========mobile-navigation======== */}
           {nav && (
             <div className="bg-white flex flex-col gap-[24px] shadow-lg z-10 absolute w-max   h-screen top-[70px] right-0 ">
-              {parseCredObj?._id ? (
+              {/* {parseCredObj?._id ? (
                 <div className="flex flex-col gap-[24px]">
-                  {/* <Link
+                  <Link
                     onClick={handleNavclose}
                     className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                     href="/profile"
                   >
                     <CgProfile className="text-[#2591b2]" />
                     profile
-                  </Link> */}
+                  </Link>
                   
                 </div>
-              ) : null}
+              ) : null} */}
               {!parseCredObj?._id ? (
                 <Link
                   onClick={handleNavclose}
                   className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                   href="/login"
                 >
-                  <MdLogin className="text-[#2591b2]" />
+                  <MdLogin onClick={handleLogout} className="text-[#2591b2]" />
                   Login
                 </Link>
               ) : (
                 <Link
                   onClick={handleNavclose}
                   className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
-                  href="#"
+                  href="/login"
                 >
                   <MdLogin className="text-[#2591b2]" />
                   Logout
                 </Link>
               )}
 
-              <div className="h-[1px] bg-[#ededed] "></div>
             </div>
           )}
         </div>
       </div>
-    </>
+    
   );
 };
 

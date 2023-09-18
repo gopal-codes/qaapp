@@ -30,7 +30,8 @@ const Login = () => {
           console.log(response)
           const credObj = JSON.stringify(response?.data.data)
           alert(response.data.message)
-          localStorage.setItem("loginKey",credObj)
+          if (typeof window !== 'undefined') {
+          localStorage.setItem("loginKey",credObj)}
           router.push("/")
       });
   };
