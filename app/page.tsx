@@ -8,10 +8,6 @@ import axios from "axios";
 
 export default async function Home() {
 
-
-  const result = await axios.get(
-    `/api/qabank`
-  );
   
   return (
     <>
@@ -19,7 +15,7 @@ export default async function Home() {
     <Nav />
     <main>
       <HeroSection />
-      <ViewQA data={result?.data?.data} admin={true} />
+      <ViewQA />
       <WhyChooseUs />     
     </main>
     <Footer />

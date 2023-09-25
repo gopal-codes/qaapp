@@ -5,9 +5,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 // testing get request
 export async function GET(req: NextRequest, res: NextResponse) {
-  await connectMongoDB();
-  const allqa = await singleqa.find({});
-  return NextResponse.json({ data: allqa });
+  try {
+    await connectMongoDB();
+    const allqa = await singleqa.find({});
+    return NextResponse.json({ data: allqa });
+  } catch (err) {
+    return NextResponse.json({ message: err+"error while adding", success: false });
+  }  
 }
 
 

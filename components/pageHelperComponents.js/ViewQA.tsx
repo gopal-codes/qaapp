@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdArrowBack,
   MdArrowDownward,
@@ -13,12 +13,17 @@ import { getAdmin } from "../../utils/tokenUtils";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-type data = {
-  admin?: boolean;
-  data?: [];
-};
 
-const ViewQA = async (props: data) => {
+const ViewQA = async () => {
+
+  const [data, setdata] = useState<any>([]);
+
+  useEffect(()=>{
+  axios.get(
+      `/api/qabank`
+    ).then((res)=>setdata(res.data?.data))
+  },[])
+
   const admin = getAdmin();
 
   const [answer, showAnswer] = useState<Number>(0);
@@ -40,7 +45,7 @@ const ViewQA = async (props: data) => {
           <h2 className="addqatextbackpart ">Add New</h2>
           <h2 className="addqatext ">Add New</h2>
       </div>
-        {props.data?.map((value: any, index) => (
+        {data?.map((value: any, index:any) => (
           <span key={index} className="w-full p-2 flex flex-col gap-3">
             
             <div className="flex justify-between p-4 items-center border-[4px] border-black bg-[#2591B2] rounded-md">
