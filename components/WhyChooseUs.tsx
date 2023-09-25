@@ -54,8 +54,8 @@ const WhyChooseUs = () => {
             <img
               width={250}
               height={200}
-              src="/assets/whyus.jpg"
-              className="h-full w-full object-contain"
+              src="/assets/student.jpg"
+              className="h-full w-full object-cover"
               alt="why us banner"
             />
           </div>

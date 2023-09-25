@@ -69,6 +69,7 @@ const AddQA = (props:alldata) => {
         .then((response) => {
           alert(response.data.message);
         })
+        router.push("/")
       }catch(error){
         alert(error)
       }

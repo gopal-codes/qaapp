@@ -20,7 +20,6 @@ export async function GET(request:any,{params}:any){
 export async function PUT(request:any,{params}:any){
   const {id} = params;
   const {question,answer} = await request.json();
-  console.log(question,answer)
   await connectMongoDB();
   const res = await singleqa.findByIdAndUpdate(id,{question,answer}) 
   return NextResponse.json({message:id + "updated."},{status:200})

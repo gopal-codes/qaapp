@@ -15,7 +15,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
 export async function POST(req:Request, res: Response) {
   try {
     const {question,answer} = await req.json();
-    console.log(question,answer)
     await connectMongoDB();
     await singleqa.create({question,answer})
     return NextResponse.json({message:"Topic Created"},{status:200});

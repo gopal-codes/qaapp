@@ -9,16 +9,16 @@ const HeroSection = () => {
   return (
     <>
       <div className="hero-section">
-        <div className="image-banner-container  relative hidden md:flex  ">
-          <Image
-            className="w-full h-[180px] object-cover "
-            src="/assets/banner.jpg"
+        <div className="image-banner-container h-[180px] relative hidden md:flex  ">
+          <img
+            className="w-full h-full "
+            src="/assets/bannerbook.jpg"
             // layout="responsive"
             alt="banner"
-            width={1000}
-            height={240}
+            // width={1000}
+            // height={500}
           />
-          <div className=" absolute left-[50%] translate-x-[-50%] bg-white/[0.85] h-[180px] w-[720px] ">
+          <div className=" absolute left-[50%] translate-x-[-50%] bg-white/[0.95] h-[180px] w-[720px] ">
             <div className="text-[#2591B2] text-[20px] leading-[60.94px] font-medium text-center pl-[124.5px] pr-[125.5px] ">
               Professional Notes On Demand
             </div>
