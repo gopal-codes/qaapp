@@ -42,7 +42,7 @@ const AddQA = (props:alldata) => {
     }
     await axios
       .post(
-        `http://localhost:3000/api/qabank`,
+        `/api/qabank`,
         data
       )
       .then((response) => {
@@ -63,7 +63,7 @@ const AddQA = (props:alldata) => {
       }
       await axios
         .put(
-          `http://localhost:3000/api/qabank/edit/${props.data?._id}`,
+          `/api/qabank/edit/${props.data?._id}`,
           formdata
         )
         .then((response) => {

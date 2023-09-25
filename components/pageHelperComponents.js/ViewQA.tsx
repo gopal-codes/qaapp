@@ -28,7 +28,7 @@ const ViewQA = async (props: data) => {
   const handlingDELETE = async(id:string) =>{
     const confirmed = confirm("Are you Sure? ")
     if(confirmed){
-    await axios.delete(`http://localhost:3000/api/qabank?id=${id}`)
+    await axios.delete(`/api/qabank?id=${id}`)
     router.refresh();
   };
   }
@@ -44,7 +44,7 @@ const ViewQA = async (props: data) => {
           <span key={index} className="w-full p-2 flex flex-col gap-3">
             
             <div className="flex justify-between p-4 items-center border-[4px] border-black bg-[#2591B2] rounded-md">
-              <p className=" text-[25px] text-white ">{value?.question}</p>
+              <p className=" text-[25px] text-white ">{value?.question} ?</p>
 
               <div className="flex items-center ">
                 <div onClick={()=>showAnswer(index)}>
@@ -84,7 +84,7 @@ const ViewQA = async (props: data) => {
 
             {answer === index && (
               <div className="flex justify-start border-[2px] border-[#2591B2] rounded-md p-3">
-                <p className=" text-[20px]">{value.answer}</p>
+                <p className=" text-[20px]">ans: {value.answer} </p>
               </div>
             )}
           </span>

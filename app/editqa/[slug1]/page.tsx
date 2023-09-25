@@ -6,7 +6,7 @@ import React from 'react'
 
 const page = async({params}:any) => {
     
-    const data:any = await axios.get(`http://localhost:3000/api/qabank/edit/${params.slug1}`);
+    const data:any = await axios.get(`/api/qabank/edit/${params.slug1}`);
   
   return (
     <>  <Nav />

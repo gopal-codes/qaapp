@@ -25,7 +25,7 @@ const Login = () => {
     }
     
     await axios
-      .post(`http://localhost:3000/api/login`, data)
+      .post(`/api/login`, data)
       .then((response) => {
           console.log(response)
           const credObj = JSON.stringify(response?.data.data)
