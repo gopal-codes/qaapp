@@ -10,7 +10,7 @@ export default async function Home() {
 
 
   const result = await axios.get(
-    `http://localhost:3000/api/qabank`
+    `/api/qabank`
   );
   
   return (
